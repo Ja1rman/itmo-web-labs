@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Web-Lab-1</title>
+        <style>
+            #main-info{
+                font-family: serif;
+                color: black;
+                font-size: medium;
+            }
+            #main-table{
+                width: 400pt;
+            }
+            .title{
+                color:blueviolet;
+                font-family: serif;
+            }
+            .input-label{
+                padding: 2% 2% 2% 0%;
+            }
+            .x-label{
+                font-weight: bold;
+                padding: 0% 0% 0% 2%;
+            }
+            .input-value{
+                padding: 0% 0% 0% 1%;
+                width: 300pt;
+            }
+            .x-checkbox{
+                margin: 0%;
+            }
+            #y-textinput{
+                margin-left: 2%;
+            }
+            .r-input-button{
+                margin-left: 2%;
+            }
+            .button{
+                width: 80pt;
+            }
+            #result-table{
+                border-spacing: 10pt;
+                text-align: center;
+            }
+            .box-error{
+                color: crimson;
+            }
+            .text-error{
+                color: crimson;
+            }
+        </style>
+        <script>
+            function setColor(btn, color) {
+                var property = document.getElementById(btn);
+                for(let i = 1; i <= 5; i++) {
+                    var elem = document.getElementById('button' + i);
+                    elem.style.backgroundColor = '#E5E5E5';
+                }
+                property.style.backgroundColor = color;
+            }
+        </script>
+    </head>
+    <body>
+        <table id="main-table">
+            <tr>
+                <!-- Header -->
+                <td>
+                    <span id="main_info">Ovsyannikov Roman Dmitrievich (P32081), Variant 1217</span>
+                </td>
+            </tr>
+            <tr>
+                <!-- Values -->
+                <td class="content-plate">
+                    <div>
+                        <h2 class="title">Values</h2>
+                    </div>
+          
+                    <form id="input-form" action="" method="GET">
+                        <table>
+                        <!-- X Value -->
+                        <tr>
+                            <td class="input-label">
+                                <label>X:</label>
+                            </td>
+                            <td class="input-value">
+                                <label class="x-label" for="x-checkbox1">-3</label>
+                                <input class="x-checkbox" id="x-checkbox1" type="checkbox" value="-3">
+                            
+                                <label class="x-label" for="x-checkbox2">-2</label>
+                                <input class="x-checkbox" id="x-checkbox2" type="checkbox" value="-2">
+                            
+                                <label class="x-label" for="x-checkbox3">-1</label>
+                                <input class="x-checkbox" id="x-checkbox3" type="checkbox" value="-1">
+                            
+                                <label class="x-label" for="x-checkbox4">0</label>
+                                <input class="x-checkbox" id="x-checkbox4" type="checkbox" value="0">
+                            
+                                <label class="x-label" for="x-checkbox5">1</label>
+                                <input class="x-checkbox" id="x-checkbox5" type="checkbox" value="1">
+                            
+                                <label class="x-label" for="x-checkbox5">2</label>
+                                <input class="x-checkbox" id="x-checkbox6" type="checkbox" value="2">
+                            
+                                <label class="x-label" for="x-checkbox5">3</label>
+                                <input class="x-checkbox" id="x-checkbox7" type="checkbox" value="3">
+                            
+                                <label class="x-label" for="x-checkbox5">4</label>
+                                <input class="x-checkbox" id="x-checkbox8" type="checkbox" value="4">
+                            
+                                <label class="x-label" for="x-checkbox5">5</label>
+                                <input class="x-checkbox" id="x-checkbox9" type="checkbox" value="5">    
+                            </td>
+                        </tr>
+            
+                        <!-- Y Value -->
+                        <tr>
+                            <td class="input-label">
+                                <label for="y-textinput">Y:</label>
+                            </td>
+            
+                            <td class="input-value">
+                                <input id="y-textinput" type="text" maxlength="5" autocomplete="off" placeholder="Number in (-5; 3)">
+                            </td>
+                        </tr>
+            
+                        <!-- R Value -->
+                        <tr>
+                            <td class="input-label">
+                                <label>R:</label>
+                            </td>
+
+                            <td class="input-value">
+                                <button class="r-input-button" id="button1" onclick="setColor('button1', '#00FA9A')" value="1">1</button>
+                                <button class="r-input-button" id="button2" onclick="setColor('button2', '#00FA9A')" value="1.5">1.5</button>
+                                <button class="r-input-button" id="button3" onclick="setColor('button3', '#00FA9A')" value="2">2</button>
+                                <button class="r-input-button" id="button4" onclick="setColor('button4', '#00FA9A')" value="2.5">2.5</button>
+                                <button class="r-input-button" id="button5" onclick="setColor('button5', '#00FA9A')" value="3">3</button>
+                            </td>
+                            
+                            
+                        </tr>
+            
+                        <!-- Buttons -->
+                        <tr>
+                            <td colspan="2">
+                                <div class="buttons">
+                                    <input class="button" type="submit" value="Submit">
+                                    <!--<input class="button" type="reset" value="Reset">-->
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                  </form>
+                </td>
+            </tr>
+            <tr>
+                <!-- Graph -->
+                <td class="content-plate">
+                    <div>
+                        <h2 class="title">Graph</h2>
+                    </div>
+            
+                    <div class="image-container">
+                        <img src="img/graph.png">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <!-- Table -->
+                <td class="content-plate" rowspan="2">
+                    <div>
+                        <h2 class="title">Table</h2>
+                    </div>
+                    
+                    <div class="scroll-container">
+                        <table id="result-table">
+                            <tr class="table-header">
+                                <th class="coords-col">X</th>
+                                <th class="coords-col">Y</th>
+                                <th class="coords-col">R</th>
+                                <th class="time-col">Time</th>
+                                <th class="time-col">Execution time</th>
+                                <th class="hitres-col">Answer</th>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            </table>
+          
+            <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+            <script src="js/main.js"></script>
+    </body>
+</html>
