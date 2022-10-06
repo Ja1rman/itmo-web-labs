@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+<!--    <filter>-->
+<!--        <filter-name>FilterConnect</filter-name>-->
+<!--        <filter-class>FilterConnect</filter-class>-->
+<!--    </filter>-->
+
+<!--    <filter-mapping>-->
+<!--        <filter-name>FilterConnect</filter-name>-->
+<!--        <url-pattern>/a</url-pattern>-->
+<!--    </filter-mapping>-->
+
+    <servlet>
+        <servlet-name>
+            ControllerServlet
+        </servlet-name>
+        <servlet-class>servlets.ControllerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>
+            AreaCheckServlet
+        </servlet-name>
+        <servlet-class>servlets.AreaCheckServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AreaCheckServlet</servlet-name>
+        <url-pattern>/AreaCheckServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>
+            RecoverServlet
+        </servlet-name>
+        <servlet-class>servlets.RecoverServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RecoverServlet</servlet-name>
+        <url-pattern>/RecoverServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControllerServlet</servlet-name>
+        <url-pattern></url-pattern>
+    </servlet-mapping>
+</web-app>
