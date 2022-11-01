@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="template.xhtml">
+
+    <ui:define name="main">
+        <div id="startDiv">
+            <h:form id="formStart" autocomplete="off">
+                <h:outputLabel for="inputName" styleClass="ind" >
+                    Enter your nickname to see previous requests:
+                    <h:inputText id="inputName" value="#{wrapBean.username}" styleClass="ind txt" >
+                    </h:inputText>
+                </h:outputLabel>
+                <br/>
+                <br/>
+                <h:commandButton styleClass="ind" id="startButton" value="Start" action="#{wrapBean.start}"/>
+            </h:form>
+            <br/>
+            <br/>
+            <div id="clock" class="ind" >
+            </div>
+        </div>
+    </ui:define>
+
+    <ui:define name="scriptPage">
+        <script type="module" src="JS/script.js"></script>
+    </ui:define>
+</ui:composition>
+</html>

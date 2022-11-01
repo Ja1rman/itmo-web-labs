@@ -1,0 +1,145 @@
+.header{
+    height:70px;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 70px;
+}
+
+#mainBody{
+    height: 1350px;
+    width: 960px;
+    margin: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+}
+#divInput{
+    margin-top: 80px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+fieldset{
+    width: 403px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 13px;
+    border: 1px solid #6c6c6c;
+    margin-bottom: 30px;
+
+}
+td, table, tr, th, tbody, thead, #dt_paginator_bottom{
+    background-color: transparent !important;
+    background-image: none !important;
+}
+#footer{
+    text-align: center;
+    height: 40px;
+}
+#startDiv, #header{
+    text-align: center;
+}
+.ind{
+    margin-top: 40px;
+}
+a{
+    text-decoration: none;
+}
+#requests{
+    height: 500px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label{
+    margin: 4px;
+}
+#sub{
+    border: 1px solid #6c6c6c;
+}
+#imageXY{
+    height: 500px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.divRequestContent{
+    float: left;
+    height: 60px;
+    margin-left: 30px;
+}
+.hide{
+    float: right;
+    margin-right: 0px;
+    margin-top: 0px;
+    height: 60px;
+    width: 50px;
+}
+table{
+    margin-top: 5px;
+    width: 800px;
+    text-align: center;
+    table-layout: fixed;
+}
+#changeThemeMode{
+    padding: 5px;
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    border-radius: 10px;
+}
+
+#goBack{
+    padding: 5px;
+    position: absolute;
+    top: 250px;
+    left: 50px;
+    border-radius: 10px;
+}
+
+.request{
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    height: 60px;
+    width: 960px;
+    margin-bottom: 10px;
+    border: 5px solid;
+}
+
+#toAnotherTheme{
+
+}
+h1{
+    text-decoration: none;
+    padding: 5px;
+}
+input[type=text]{
+    margin-left: 5px;
+    margin-right: 5px;
+    border-width: 5px;
+}
+#rangeR, #rangeY, #rangeX{
+    visibility: hidden;
+}
+.divWithLink{
+    height: 10px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.hide{
+    font-size: large;
+    border-radius: 5px;
+    margin-top: 7px;
+    margin-right: 7px;
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 34px;
+}
+legend{
+    font-size: large;
+}

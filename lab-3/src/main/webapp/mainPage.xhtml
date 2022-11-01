@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="template.xhtml">
+
+    <ui:define name="main">
+        <div id="divInput">
+            <fieldset>
+                <legend>Enter X, Y, R values.</legend>
+                <h:form id="mainForm">
+                    <h:outputLabel for="inputX">
+                        X:
+                        <h:inputText styleClass="test1" id="inputX" value="#{wrapBean.beanData.x}">
+                            <f:validateRequired/>
+                            <f:validateDoubleRange minimum="-3" maximum="3"/>
+                        </h:inputText>
+                    </h:outputLabel>
+                    <label id="rangeX">Range is from -3 to 3</label>
+                    <br/>
+                    <br/>
+                    <h:outputLabel for="inputY">
+                        Y:
+                        <h:inputText styleClass="test1" id="inputY" value="#{wrapBean.beanData.y}">
+                            <f:validateRequired/>
+                            <f:validateDoubleRange minimum="-5" maximum="3"/>
+                        </h:inputText>
+                    </h:outputLabel>
+                    <label id="rangeY">Range is from -5 to 3</label>
+                    <br/>
+                    <br/>
+
+                    <h:outputLabel>
+                        R:
+                            <h:selectBooleanCheckbox value="#{wrapBean.beanData.r1}" id="inputR1" styleClass="selectClass" itemLabel="1" itemValue="1">1</h:selectBooleanCheckbox>
+                            <h:selectBooleanCheckbox value="#{wrapBean.beanData.r2}" id="inputR2" styleClass="selectClass" itemLabel="2" itemValue="2">2</h:selectBooleanCheckbox>
+                            <h:selectBooleanCheckbox value="#{wrapBean.beanData.r3}" id="inputR3" styleClass="selectClass" itemLabel="3" itemValue="3">3</h:selectBooleanCheckbox>
+                            <h:selectBooleanCheckbox value="#{wrapBean.beanData.r4}" id="inputR4" styleClass="selectClass" itemLabel="4" itemValue="4">4</h:selectBooleanCheckbox>
+                            <h:selectBooleanCheckbox value="#{wrapBean.beanData.r5}" id="inputR5" styleClass="selectClass" itemLabel="5" itemValue="5">5</h:selectBooleanCheckbox>
+                    </h:outputLabel>
+                    <br/>
+                    <br/>
+
+
+                    <h:commandButton id="sub" value="Check">
+                        <f:ajax execute="@form" listener="#{wrapBean.newRequest}" render="dt"/>
+                    </h:commandButton>
+                </h:form>
+            </fieldset>
+
+            <div id="imageXY">
+                <canvas id="canv" height="500" width="500"/>
+            </div>
+        </div>
+        <div id="coordinates"></div>
+        <div id="requests">
+            <p:dataTable value="#{wrapBean.paginationList}" id="dt" paginatorPosition="bottom" var="req" paginator="true" rows="5" lazy="true" paginatorTemplate=
+                    "{RowsPerPageDropdown} {FirstPageLink}
+                     {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}" dynamic="true" emptyMessage="No requests yet"  rowsPerPageTemplate="5">
+                <p:column>
+                    <f:facet name="header">x</f:facet>
+                    <h:outputText value="#{req.x}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">y</f:facet>
+                    <h:outputText value="#{req.y}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">r</f:facet>
+                    <h:outputText value="#{req.r}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">answer</f:facet>
+                    <h:outputText value="#{req.isin  ? 'hit!' : 'not hit'}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">date</f:facet>
+                    <h:outputText value="#{req.date}"/>
+                </p:column>
+            </p:dataTable>
+        </div>
+        <div class="divWithLink"><h:link outcome="startPage" value="start page"/></div>
+
+    </ui:define>
+
+    <ui:define name="scriptPage">
+        <script type="module" src="JS/main.js"></script>
+    </ui:define>
+</ui:composition>
+</html>

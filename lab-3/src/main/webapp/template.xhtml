@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+
+<h:head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Lab-3</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet"/>
+</h:head>
+<h:body>
+    <div id="changeThemeMode" onclick="handleClickChangeColor()">
+        <img alt="image" id="toAnotherTheme" src=""/>
+    </div>
+    <div id="header"><h1>Ovsyannikov Roman Dmitrievich (P32081), Variant 444</h1></div>
+    <div id="mainBody">
+        <ui:insert name="main">
+            body
+        </ui:insert>
+    </div>
+    <div id="footer">
+        <div class="divWithLink"></div>
+        <div>
+            Sponsored by
+            <a href="https://mcbrawl.ru/" target="_blank">BrawlCraft</a>
+        </div>
+    </div>
+    <ui:insert name="scriptPage"/>
+</h:body>
+</html>
