@@ -1,0 +1,17 @@
+.main-footer {
+  flex-direction: column;
+  padding: 1em;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  font-size: 10px;
+  line-height:100%;
+}
+
+.footer-text {
+
+  text-align: center;
+}
